@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ReviewAnalysis
 {
 /** All user reviews to be included in this analysis */
@@ -11,7 +13,14 @@ public ReviewAnalysis()
 * No element of allReviews is null.
 */
 public double getAverageRating()
-{ /* to be implemented in part (a) */ }
+{
+    double avgrating = 0;
+    for (Review a : allReviews) {
+        avgrating += a.getRating();
+    }
+    avgrating = avgrating/allReviews.length;
+    return avgrating;
+}
 /** Returns an ArrayList of String objects containing formatted versions of
 * selected user comments, as described in part (b)
 * Precondition: allReviews contains at least one Review.
@@ -19,6 +28,15 @@ public double getAverageRating()
 * Postcondition: allReviews is unchanged.
 */
 public ArrayList<String> collectComments()
-{ /* to be implemented in part (b) */ }
+{
+    int count = 0;
+    ArrayList comments = new ArrayList<String>();
+    for (Review a : allReviews) {
+        if (a.getComment().indexOf("!") != -1) {
+            comments.add(count + "-" + a.getComment());
+        }
+        count++;
+    }
+    return comments;
 }
-AP® Computer
+}
