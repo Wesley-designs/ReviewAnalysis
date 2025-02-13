@@ -5,8 +5,10 @@ public class ReviewAnalysis
 /** All user reviews to be included in this analysis */
 private Review[] allReviews;
 /** Initializes allReviews to contain all the Review objects to be analyzed */
-public ReviewAnalysis()
-{ /* implementation not shown */ }
+public ReviewAnalysis(Review[] allRev)
+{
+    allReviews = allRev;
+}
 /** Returns a double representing the average rating of all the Review objects to be
 * analyzed, as described in part (a)
 * Precondition: allReviews contains at least one Review.
