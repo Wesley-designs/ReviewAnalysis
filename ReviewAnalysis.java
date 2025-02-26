@@ -32,7 +32,7 @@ public double getAverageRating()
 public ArrayList<String> collectComments()
 {
     int count = 0;
-    ArrayList comments = new ArrayList<String>();
+    ArrayList<String> comments = new ArrayList<String>();
     for (Review a : allReviews) {
         if (a.getComment().indexOf("!") != -1) {
             comments.add(count + "-" + a.getComment());
